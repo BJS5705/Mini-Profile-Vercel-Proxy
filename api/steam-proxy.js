@@ -12,8 +12,8 @@ export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET');
 
-    // X-Frame-Options 헤더를 설정하지 않음
-    res.setHeader('X-Frame-Options', 'ALLOWALL'); // 또는 삭제하여 기본값을 사용하지 않도록 설정
+    // X-Frame-Options 헤더 설정을 방지
+    res.setHeader('X-Frame-Options', ''); // 헤더를 비우거나 삭제
 
     res.status(200).send(html); // HTML 반환
   } catch (error) {
