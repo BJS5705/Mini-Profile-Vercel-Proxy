@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
@@ -17,12 +16,12 @@
   <script defer async>
     $(function () {
       let searchParams = new URLSearchParams(window.location.search);
-      let apiHost = "mini-profile-vercel-proxy.vercel.app/api/steam-proxy"; // Serverless Function 경로
+      let apiHost = "https://mini-profile-vercel-proxy.vercel.app/api/steam-proxy"; // 수정된 Serverless Function 경로
       let steamId = searchParams.get('accountId') ? searchParams.get('accountId') : '76561198055079301';
       let interactive = searchParams.get('interactive') ? searchParams.get('interactive') : false;
       let vanityId = searchParams.get('vanityId') ? searchParams.get('vanityId') : 'intheheaven';
       let language = searchParams.get('lang') ? searchParams.get('lang') : 'koreana';
-      let apiUrl = `${apiHost}?accountId=${steamId}&lang=${language}`;
+      let apiUrl = `${apiHost}?accountId=${steamId}&lang=${language}`; // 수정된 API URL
       let steamURL = `https://steamcommunity.com/id/${vanityId}`;
 
       $.get(apiUrl, function (data) {
@@ -73,4 +72,19 @@
     </div>
     <div class="miniprofile_detailssection not_in_game miniprofile_backdrop">
       <div class="miniprofile_featuredcontainer">
-        <img src="https://cdn.fastly.steamstatic.com/steamcommunity/public/images/items/302711
+        <img src="https://cdn.fastly.steamstatic.com/steamcommunity/public/images/items/3027110/a7f29dbd93b79aaf53d3b43faa95fb0d07aa3277.png"
+          class="badge_icon">
+        <div class="description">
+          <div class="name">Unknown</div>
+          <div class="xp">? XP</div>
+        </div>
+      </div>
+      <div class="miniprofile_featuredcontainer">
+        <div class="friendPlayerLevel lvl_0"><span class="friendPlayerLevelNum">?</span></div>
+        <div class="description">
+          <div class="name">Steam Level</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
