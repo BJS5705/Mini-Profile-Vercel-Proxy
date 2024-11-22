@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const steamId = req.query.accountId || '76561198055079301';
+  const steamId = req.query.accountId || '94813573';
   const language = req.query.lang || 'koreana';
 
   const steamURL = `https://steamcommunity.com/miniprofile/${steamId}?l=${language}`;
